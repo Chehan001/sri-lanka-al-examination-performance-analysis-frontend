@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #020617; /* Slate 950 */
+    color: #f8fafc; /* Slate 50 */
+    font-family: 'Inter', 'Outfit', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b; /* Slate 800 */
+    border-radius: 9999px;
+    border: 2px solid #020617;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155; /* Slate 700 */
+  }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.45); /* Slate 800/45 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Responsive Recharts font overrides */
+.recharts-text {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
